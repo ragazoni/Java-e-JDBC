@@ -16,10 +16,6 @@ public class ConexacaoFactory {
         comboPooledDataSource.setJdbcUrl(System.getenv(Constants.URL));
         comboPooledDataSource.setUser(System.getenv(Constants.USER));
         comboPooledDataSource.setPassword(System.getenv(Constants.PASSWORD));
-        //"jdbc:mysql://localhost/loja_virtual?useTimezone=true&serverTimezone=UTC");
-        //"root"
-        //"jholdri010203"
-
         this.dataSources = comboPooledDataSource;
 
     }
