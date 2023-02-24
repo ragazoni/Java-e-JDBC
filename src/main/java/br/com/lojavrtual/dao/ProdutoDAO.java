@@ -1,5 +1,6 @@
 package br.com.lojavrtual.dao;
 
+import br.com.lojavrtual.model.Categoria;
 import br.com.lojavrtual.model.Produto;
 
 import java.sql.*;
@@ -49,5 +50,27 @@ public class ProdutoDAO {
 
         }
         return produtos;
+    }
+
+    public List<Produto> buscar(Categoria ct) throws SQLException {
+        List<Produto> produtos = new ArrayList<>();
+
+        String sql = "SELECT ID, NOME, DESCRICAO FROM PRODUTOS WHERE CATEGORIA_ID = ?";
+        try (PreparedStatement pstm = connection.prepareStatement(sql)) {
+            pstm.setInt(1, ct.getId());
+            pstm.execute();
+            try (ResultSet resultSet = pstm.getResultSet()) {
+                while (resultSet.next()) {
+                    Produto produto = new Produto(resultSet.getInt(1),
+                            resultSet.getString(2), resultSet.getString(3));
+                    produtos.add(produto);
+
+                }
+
+            }
+
+        }
+        return produtos;
+
     }
 }

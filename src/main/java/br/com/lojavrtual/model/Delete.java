@@ -15,7 +15,7 @@ public class Delete {
         Connection connection = conexacaoFactory.getConnection();
 
         Statement stm = connection.createStatement();
-        stm.execute("DELETE FROM PRODUTOS WHERE NOME = 'mouse'");
+        stm.execute("DELETE FROM PRODUTOS WHERE NOME = 'Gelaeira'");
 
         Integer linhasAfetadas = stm.getUpdateCount();
         System.out.println("linhas deletadas " + linhasAfetadas );
