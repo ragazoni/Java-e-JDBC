@@ -1,4 +1,4 @@
-package br.com.lojavrtual.constants;
+package br.com.app.desktop.constants;
 
 public class Constants {
     public static final String URL = "URL";

@@ -1,6 +1,6 @@
-package br.com.lojavrtual.factory;
+package br.com.app.desktop.factory;
 
-import br.com.lojavrtual.constants.Constants;
+import br.com.app.desktop.constants.Constants;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import javax.sql.DataSource;
@@ -20,8 +20,12 @@ public class ConexacaoFactory {
 
     }
 
-    public Connection getConnection() throws SQLException {
-       return this.dataSources.getConnection();
+    public Connection recuperarConexao() {
+        try {
+            return this.dataSources.getConnection();
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
     }
 }
 
