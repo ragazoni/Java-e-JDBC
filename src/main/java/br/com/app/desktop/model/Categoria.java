@@ -1,13 +1,13 @@
-package br.com.lojavrtual.model;
+package br.com.app.desktop.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Categoria {
 
-    Integer id;
-    String nome;
-    List<Produto> produtos = new ArrayList<>();
+    private Integer id;
+    private String nome;
+    private List<Produto> produtos = new ArrayList<>();
 
     public Categoria(Integer id, String nome) {
         this.id = id;
@@ -38,15 +38,12 @@ public class Categoria {
         this.produtos = produtos;
     }
 
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "nome='" + nome + '\'' +
-                '}';
-    }
-
     public void adicionar(Produto produto) {
         produtos.add(produto);
     }
-}
 
+    @Override
+    public String toString() {
+        return this.nome;
+    }
+}

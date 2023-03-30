@@ -1,10 +1,11 @@
-package br.com.lojavrtual.model;
+package br.com.app.desktop.model;
 
 public class Produto {
 
-    Integer id;
-    String nome;
-    String descricao;
+    private Integer id;
+    private String nome;
+    private String descricao;
+    private Integer categoriaId;
 
     public Produto(String nome, String descricao) {
         this.nome = nome;
@@ -39,6 +40,14 @@ public class Produto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Integer getCategoriaId() {
+        return categoriaId;
+    }
+
+    public void setCategoriaId(Integer categoriaId) {
+        this.categoriaId = categoriaId;
     }
 
     @Override
